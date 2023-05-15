@@ -1,0 +1,3 @@
+DROP IF EXISTS ams_db;
+
+CREATE DATABASE ams_db;
