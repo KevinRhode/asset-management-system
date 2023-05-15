@@ -50,5 +50,5 @@ Asset.init(
     }
   );
   
-  module.exports = Blogpost;
+  module.exports = Asset;
   
