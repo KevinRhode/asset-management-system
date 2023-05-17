@@ -28,14 +28,14 @@ Comment.init(
           key: 'id',
         },
       },
-      ref_id: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-        references: {
-          model: 'ref',
-          key: 'id',
-        },
-      },
+      // ref_id: {
+      //   type: DataTypes.INTEGER,
+      //   allowNull: true,
+      //   references: {
+      //     model: 'ref',
+      //     key: 'id',
+      //   },
+      // },
     },
     {
       sequelize,
