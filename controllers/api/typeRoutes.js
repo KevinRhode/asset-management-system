@@ -6,11 +6,16 @@ const { Type } = require('../../models');
 router.get('/',async (req,res)=>{
 
     try {
+        //get all types
         const typeData = await Type.findAll();
-
+        // Serialize data so the template can read it
         const types = typeData.map((type) => type.get({ plain: true }));
-    
-        return res.status(200).json(types);
+        // Render to screen
+        res.render('types',{
+            types,
+            logged_in: req.session.logged_in
+        });
+        // return res.status(200).json(types);
     } catch (err) {
         return res.status(400).json(err);
     }
@@ -21,11 +26,16 @@ router.get('/',async (req,res)=>{
 //get one
 router.get('/:id',async (req,res)=>{
     try {
+        //find obj in db
         const typeData = await Type.findByPk(req.params.id);
-
-        const types = typeData.map((type) => type.get({ plain: true }));
-    
-        return res.status(200).json(types);
+        //strip data
+        const types = typeData.get({ plain: true });
+        //render to screen
+        res.render('types',{
+            types,
+            logged_in: req.session.logged_in
+        });
+        // return res.status(200).json(types);
     } catch (err) {
         return res.status(400).json(err);
     }
@@ -44,12 +54,41 @@ router.post('/',async (req,res)=>{
       }
 });
 
-router.put('',(req,res)=>{
-    
+router.put('/:id',async (req,res)=>{
+    try {
+        const updatedType = await Type.update(
+        {
+          //spread req.body objects into obj
+          ...req.body
+        },
+        {
+          //limiting the rows that are updated
+          where:{id:req.params.id}
+        });
+        res.status(200).json(updatedType);
+      } catch (err) {
+        res.status(400).json(err);
+      }
 });
 
-router.delete('',(req,res)=>{
+router.delete('/:id',async (req,res)=>{
+    try {
+        const typeData = await Type.destroy({
+          where: {
+            id: req.params.id,
+            user_id: req.session.user_id,
+          },
+        });  
+        
+        if (!typeData) {
+          res.status(404).json({ message: 'No type found with this id!' });
+          return;
+        }
     
+        res.status(200).json(typeData);
+      } catch (err) {
+        res.status(500).json(err);
+      }
 });
 
 
