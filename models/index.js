@@ -1,8 +1,8 @@
-const User = require('./user');
-const Comment = require('./comment');
-const Asset = require('./asset');
-const Type = require('./type');
-const Location = require('./location');
+const User = require('./User');
+const Comment = require('./Comment');
+const Asset = require('./Asset');
+const Type = require('./Type');
+const Location = require('./Location');
 
 User.hasMany(Comment,{
     foreignKey: 'user_id',
