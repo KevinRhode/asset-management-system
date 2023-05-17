@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Location } = require('../../models/Location');
 // const withAuth = require('../utils/auth');
 
+//get all
 router.get('/',async (req,res)=>{
 
     try {
@@ -21,5 +22,75 @@ router.get('/',async (req,res)=>{
 
 });
 
+//get one
+router.get('/:id',async (req,res)=>{
+
+    try {
+        //get one location
+        const locationData = await Location.findByPk(req.params.id);
+        // Serialize data so the template can read it
+        const location = locationData.get({ plain: true });
+        // Render to screen
+        res.render('location',{
+            location,
+            logged_in: req.session.logged_in
+        });
+
+    } catch (err) {
+        res.status(500).json(err);
+    }
+
+});
+router.post('/',async (req,res)=>{
+
+    try {
+        const newLocation = await Location.create({
+          ...req.body,
+          user_id: req.session.user_id,
+        });
+    
+        res.status(200).json(newLocation);
+      } catch (err) {
+        res.status(400).json(err);
+      }
+
+});
+router.put('/:id',async (req,res)=>{
+
+    try {
+        const updatedLocation = await Location.update(
+        {
+          ...req.body
+        },
+        {
+          where:{id:req.params.id}
+        });
+        res.status(200).json(updatedLocation);
+      } catch (err) {
+        res.status(400).json(err);
+      }
+
+});
+router.delete('/',async (req,res)=>{
+
+    try {
+        const locationData = await Location.destroy({
+          where: {
+            id: req.params.id,
+            user_id: req.session.user_id,
+          },
+        });  
+        
+        if (!locationData) {
+          res.status(404).json({ message: 'No location found with this id!' });
+          return;
+        }
+    
+        res.status(200).json(locationData);
+      } catch (err) {
+        res.status(500).json(err);
+      }
+
+});//or maybe destory
 
 module.exports = router;
