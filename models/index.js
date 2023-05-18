@@ -8,19 +8,19 @@ User.hasMany(Comment,{
     foreignKey: 'user_id',
 });
 Asset.hasOne(Type,{
-    foreignKey:'type_id',
+    foreignKey:'id',
 });
 Asset.hasOne(Location,{
-    foreignKey: 'location_id',
+    foreignKey: 'id',
 });
 Asset.hasMany(Comment,{
-    foreignKey:'asset_id'
+    foreignKey:'id'
 });
 Type.belongsTo(Asset,{
-    foreignKey: 'type_id',
+    foreignKey: 'id',
 });
 Location.belongsTo(Asset,{
-    foreignKey:'location_id',
+    foreignKey:'id',
 });
 Comment.belongsTo(User,{
     foreignKey:'user_id'
