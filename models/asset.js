@@ -24,6 +24,10 @@ Asset.init(
         allowNull: false,
         defaultValue: DataTypes.NOW,
       },
+      manual: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
       location_id: {
         type: DataTypes.INTEGER,
         allowNull: true,
