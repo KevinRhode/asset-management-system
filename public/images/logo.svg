@@ -1,0 +1,6 @@
+<svg version="1.1"
+  width="300" height="200"
+  xmlns="http://www.w3.org/2000/svg">
+  <polygon points="150, 18 244, 182 56, 182" fill="orange" />
+  <text x="180" y="142" font-size="60" text-anchor="middle" fill="white" style="font-size:56px;font-style:normal;font-weight:normal;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans">AMS</text>
+</svg>

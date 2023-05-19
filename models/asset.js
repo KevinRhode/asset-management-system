@@ -28,6 +28,10 @@ Asset.init(
         type: DataTypes.STRING,
         allowNull: true,
       },
+      purchase_price: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
       location_id: {
         type: DataTypes.INTEGER,
         allowNull: true,

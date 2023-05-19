@@ -5,8 +5,17 @@
   <ul style="list-style-type: none; padding-inline-start: 0px;">
     {{#each assets as |asset| }}
       <li>
-        <div style="background-color: aqua; margin: 1rem 0rem";>
-          {{asset.name}} {{asset.description}} {{asset.location.description}} {{asset.type.description}}
+        <div class="btn" style="background-color: aqua; margin: 1rem 0rem; min-height:2rem;"; >
+          <div>
+              <strong style="font-size: 2rem;">{{asset.name}}</strong>
+              <label style="">{{asset.description}}</label>
+          </div>
+          <div>
+              {{asset.location.description}} 
+              {{asset.type.description}}
+              {{#if asset.manual}} <a href="{{asset.manual}}">Manual Link</a> {{else}} {{/if}}
+          </div>
+           
         </div>          
       </li>
     {{/each}}
