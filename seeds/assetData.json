@@ -15,7 +15,9 @@
         "name":"big bass wheel",
         "description":"spin wheel game",
         "location_id":1,
-        "type_id":1
+        "type_id":1,
+        "manual":"https://drive.google.com/file/d/1S_cDpbco1-plEwW067NuTuLJ0z5s6Zct/view?usp=sharing",
+        "purchase_price":12500
     },
     {
         "name":"Big Buck HD",
