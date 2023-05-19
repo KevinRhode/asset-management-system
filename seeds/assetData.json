@@ -1,0 +1,86 @@
+[
+    {
+        "name":"Air Hockey FX",
+        "description":"name checks out",
+        "location_id":1,
+        "type_id":1
+    },
+    {
+        "name":"bean bag toss",
+        "description":"corn hole",
+        "location_id":1,
+        "type_id":1
+    },
+    {
+        "name":"big bass wheel",
+        "description":"spin wheel game",
+        "location_id":1,
+        "type_id":1
+    },
+    {
+        "name":"Big Buck HD",
+        "description":"gun shooter",
+        "location_id":1,
+        "type_id":1
+    },
+    {
+        "name":"Big Buck HD Wild",
+        "description":"gun shooter",
+        "location_id":1,
+        "type_id":1
+    },
+    {
+        "name":"crossy road",
+        "description":"frogger but with ducks and a button",
+        "location_id":1,
+        "type_id":1
+    },
+    {
+        "name":"Dizzy Chicken",
+        "description":"hit the ball with the right power to win",
+        "location_id":1,
+        "type_id":1
+    },
+    {
+        "name":"Fishbowl Frenzy",
+        "description":"drop the ball at the right time",
+        "location_id":1,
+        "type_id":1
+    },
+    {
+        "name":"Lane Master",
+        "description":"bowling for kids/easy",
+        "location_id":1,
+        "type_id":1
+    },
+    {
+        "name":"Monopoly Roll N Go",
+        "description":"casino",
+        "location_id":1,
+        "type_id":1
+    },
+    {
+        "name":"Monster Crane",
+        "description":"crane game",
+        "location_id":1,
+        "type_id":1
+    },
+    {
+        "name":"Telephone Crane",
+        "description":"knobby ball crane",
+        "location_id":1,
+        "type_id":1
+    },
+    {
+        "name":"Teenage Mutant Ninja Turtles",
+        "description":"street fighter with the turtles, 4 player",
+        "location_id":1,
+        "type_id":1
+    },
+    {
+        "name":"Tight Rope",
+        "description":"spin the small unicycle handle bars at the right time",
+        "location_id":1,
+        "type_id":1
+    }
+]
