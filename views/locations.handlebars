@@ -1,0 +1,22 @@
+<!-- Loop over each object in the asset array -->
+<div style="display: flex;">
+
+<div style="flex-grow: 1;">
+  <ul style="list-style-type: none; padding-inline-start: 0px;">
+    {{#each locations as |location| }}
+      <li>
+        <div style="background-color: aqua; margin: 1rem 0rem";>
+          {{location.description}}
+        </div>          
+      </li>
+    {{/each}}
+  </ul>
+</div>
+
+<div style="flex-grow: 0.35;">
+  {{> vert-nav}}
+</div>
+
+</div>
+
+
