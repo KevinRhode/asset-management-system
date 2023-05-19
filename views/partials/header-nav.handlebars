@@ -1,0 +1,12 @@
+<div style="display:flex; align-items:center; justify-content: space-between;">
+<h1>
+    Asset Management
+</h1>
+<div>
+    <a href="/">Home</a> | {{#if logged_in}} <a href="" id="logout">Logout</a>   {{else}}  <a href="/login">Login</a> / <a href="/sign-up">Signup</a>  {{/if}} 
+</div>
+</div>
+
+{{#if logged_in}} 
+<script src="./js/logout.js"></script>
+{{/if}}
