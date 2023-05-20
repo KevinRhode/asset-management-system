@@ -1,12 +1,15 @@
 <!-- Loop over each object in the asset array -->
-<div style="display: flex;">
+<div style="display: flex; flex-grow:1;">
 
 <div style="flex-grow: 1;">
   <ul style="list-style-type: none; padding-inline-start: 0px;">
     {{#each locations as |location| }}
       <li>
-        <div style="background-color: aqua; margin: 1rem 0rem";>
-          {{location.description}}
+        <div class="btn" style="background-color: aqua; margin: 1rem 0rem; min-height:2rem;"; >
+          <div>
+              <strong style="font-size: 2rem; padding-left:1rem;">{{location.description}}</strong>
+          </div>
+           
         </div>          
       </li>
     {{/each}}

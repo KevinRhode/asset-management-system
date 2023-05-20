@@ -56,3 +56,11 @@
     color: #f0f0f0;
     text-decoration: none;
   }
+
+  .form-group{
+    margin: 1rem 0rem;
+  }
+
+  .btn{
+    width: 100%;
+  }
