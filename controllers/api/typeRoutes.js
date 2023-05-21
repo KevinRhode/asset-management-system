@@ -1,7 +1,23 @@
 const router = require('express').Router();
 const { Type } = require('../../models');
+const withAuth = require('../../utils/auth');
 // const withAuth = require('../utils/auth');
 
+
+//get create view
+router.get('/create',withAuth,(req,res)=>{
+  try {
+    
+    // Render to screen
+    res.render('type',{
+        
+        logged_in: req.session.logged_in
+    });
+
+} catch (err) {
+    res.status(500).json(err);
+}
+});
 //get All
 router.get('/',async (req,res)=>{
 
@@ -41,7 +57,7 @@ router.get('/:id',async (req,res)=>{
     }
 });
 
-router.post('/',async (req,res)=>{
+router.post('/',withAuth,async (req,res)=>{
     try {
         const newType = await Type.create({
           ...req.body,
@@ -54,7 +70,7 @@ router.post('/',async (req,res)=>{
       }
 });
 
-router.put('/:id',async (req,res)=>{
+router.put('/:id',withAuth,async (req,res)=>{
     try {
         const updatedType = await Type.update(
         {
@@ -71,7 +87,7 @@ router.put('/:id',async (req,res)=>{
       }
 });
 
-router.delete('/:id',async (req,res)=>{
+router.delete('/:id',withAuth,async (req,res)=>{
     try {
         const typeData = await Type.destroy({
           where: {
