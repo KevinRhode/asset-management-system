@@ -2,7 +2,7 @@ const locationFormHandler = async (e) => {
     e.preventDefault();
 
     
-    const password = document.querySelector('#location-description').value.trim();
+    const description = document.querySelector('#location-description').value.trim();
     // Get the modal
     const modal = document.getElementById("myModal");
     // Get the <span> element that closes the modal
@@ -21,8 +21,8 @@ const locationFormHandler = async (e) => {
       }
     }
     
-    if(username && email && password){
-        const res = await fetch('/api/user/',{
+    if(description){
+        const res = await fetch('/api/location/',{
             method:'POST',
             body: JSON.stringify({username,email,password}),
             headers: {'Content-Type':'application/json'},
@@ -30,6 +30,7 @@ const locationFormHandler = async (e) => {
         if(res.ok){
             // document.location.replace('/dashboard');
             modal.style.display = "block"; //sucess
+            modal.textContent = "Location created!"
         }else{
         // When the user clicks the button, open the modal 
             modal.style.display = "block";        

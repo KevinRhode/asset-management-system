@@ -1,6 +1,21 @@
 const router = require('express').Router();
 const { Location } = require('../../models');
-// const withAuth = require('../utils/auth');
+const withAuth = require('../../utils/auth');
+
+//get create view
+router.get('/create',withAuth,(req,res)=>{
+  try {
+    
+    // Render to screen
+    res.render('location',{
+        
+        logged_in: req.session.logged_in
+    });
+
+} catch (err) {
+    res.status(500).json(err);
+}
+});
 
 //get all
 router.get('/',async (req,res)=>{
@@ -41,7 +56,7 @@ router.get('/:id',async (req,res)=>{
     }
 
 });
-router.post('/',async (req,res)=>{
+router.post('/',withAuth,async (req,res)=>{
 
     try {
         const newLocation = await Location.create({
@@ -55,7 +70,7 @@ router.post('/',async (req,res)=>{
       }
 
 });
-router.put('/:id',async (req,res)=>{
+router.put('/:id',withAuth,async (req,res)=>{
 
     try {
         const updatedLocation = await Location.update(
@@ -71,7 +86,7 @@ router.put('/:id',async (req,res)=>{
       }
 
 });
-router.delete('/:id',async (req,res)=>{
+router.delete('/:id',withAuth,async (req,res)=>{
 
     try {
         const locationData = await Location.destroy({
