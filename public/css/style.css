@@ -70,9 +70,21 @@
     border-radius: 1rem;
   }
 
-
+  #logo-order{
+    flex-direction: column;
+  }
+  #logo-order h1{
+    margin: 0.5rem 0rem;
+    padding-left: 2rem;
+  }
   .header-nav-handle{
     flex-direction: column;
+  }
+  .border h2{
+    padding-left: 1rem;
+  }
+  .border .asset{
+    padding: 0.75rem;
   }
   .header-nav-handle a{
     margin: 0.25rem 0rem;
@@ -146,6 +158,9 @@
   } */
 
   @media screen and (min-width:667px){
+    #logo-order{
+      flex-direction: row;
+    }
     .header-nav-handle{
       flex-direction: row;
     }

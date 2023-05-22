@@ -1,7 +1,11 @@
 <div class="row mac" style="display:flex;flex-grow: 1;justify-content: center;align-items: stretch;">
 <div class="border">
   <h2>Location</h2>
-<div class="location">
+<div class="location" id="location" {{#if location}}
+          data-id="{{location.id}}"
+        {{else}}
+          
+        {{/if}} >
     <form class="form location-form">
       <div class="form-group">
         <label for="location-description">Location Name</label>
@@ -15,10 +19,10 @@
       </div>
       <div class="form-group">
         {{#if location}}
-          <button class="btn btn-primary" type="submit">Update</button>
-          <button class="btn btn-primary" type="submit">Delete</button>
+          <button class="btn btn-primary edit-handle" data-id="{{location.id}}" type="click">Update</button>
+          <button class="btn btn-primary delete-handle" data-id="{{location.id}}" type="click">Delete</button>
         {{else}}
-          <button class="btn btn-primary" type="submit">Create!</button>
+          <button class="btn btn-primary create-handle" type="submit">Create!</button>
         {{/if}}
       </div>
     </form>

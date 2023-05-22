@@ -22,10 +22,41 @@ router.get('/create', async (req, res) => {
     res.status(500).json(err);
   }
 });
+router.get('/edit/:id', async (req, res) => {
+  try {
+    const assetData = await Asset.findByPk(req.params.id,{
+      include:[{model:Location},{model:Type}]
+    });
+    const locationData = await Location.findAll({});
+    const typeData = await Type.findAll({});      
+
+    const locations = locationData.map((location)=> location.get({ plain: true }));
+      
+    const types = typeData.map((type)=> type.get({ plain: true }));
+
+    const asset = assetData.get({ plain: true });
+      
+     
+    res.render('asset-update', {
+      // layout:'main-comment',
+      asset,
+      locations,
+      types,
+      // comment,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+  
+});
 router.get('/', async (req, res) => {
     try {
       const assetData = await Asset.findAll(
         {
+          order:[
+            ['name','ASC'],
+          ],
         include: [
           {
             model:Location,
@@ -44,8 +75,8 @@ router.get('/', async (req, res) => {
               attributes:['username']
           }]            
           },          
-        ],
-      }
+        ],        
+        },
     );      
   
       const assets = assetData.map((asset)=> asset.get({ plain: true }));
@@ -89,6 +120,7 @@ router.put('/:id', async (req,res)=>{
     res.status(400).json(err);
   }
 });
+
 
 router.delete('/:id', async (req,res)=>{
   try {

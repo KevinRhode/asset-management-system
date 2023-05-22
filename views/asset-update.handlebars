@@ -1,0 +1,75 @@
+<div class="row mac" style="display:flex;flex-grow: 1;justify-content: center;align-items: stretch;">
+<div class="border">
+  <h2 style="padding-left: 1rem;">Asset</h2>
+<div class="asset" id="asset" data-id="{{asset.id}}" style="padding: 0.25rem;">
+    
+
+    <form class="form asset-update-form" style="text-align: end;">
+      <div class="form-group" style="display: flex; flex-direction:column;">
+        <label for="asset-name">Asset Name: </label>
+        <input class="form-input" type="text" id="asset-name" 
+        value="{{asset.name}}"
+        />
+      </div>
+      <div class="form-group" style="display: flex; flex-direction:column;">
+        <label for="location-select">Asset Location: </label>
+        <select name="Location" id="location-select">
+            <option value="{{asset.location.id}}" selected> {{asset.location.description}} </option>
+            {{#if locations}}
+                 {{#each locations as |location| }}
+                  
+                    <option value="{{location.id}}">{{location.description}}</option>
+                              
+                 {{/each}}
+            {{else}}
+
+            {{/if}}
+            
+
+        </select>
+      </div>
+      <div class="form-group" style="display: flex; flex-direction:column;">
+        <label for="type-select">Asset Type: </label>
+        <select name="Type" id="type-select">
+            <option value="{{asset.type.id}}" selected> {{asset.type.description}}</option>
+            {{#if types}}
+                 {{#each types as |type| }}
+                 <option value="{{type.id}}">{{type.description}}</option>
+                 {{/each}}
+            {{else}}
+
+            {{/if}}
+            
+
+        </select>
+      </div>
+      <div class="form-group" style="display: flex; flex-direction:column;">
+        <label for="asset-description">Asset Description: </label>
+        <textarea name="asset-description" id="asset-description" cols="22" rows="10">{{asset.description}}</textarea>
+        {{!-- <input class="form-input" type="text" id="asset-description"
+        value="{{asset.description}}" /> --}}
+      </div>
+      
+      <div class="form-group" style="text-align: center; ">
+        <button class="btn btn-primary edit-handler" type="submit">Update!</button>
+        <button class="btn btn-primary edit-handler" data-id="{{asset.id}}" type="submit">Delete!</button>
+      </div>
+    </form>
+  </div>
+  </div>  
+</div>
+
+<div style="flex-grow: 0.35;">
+  {{> vert-nav}}
+</div>
+
+<script src="/js/asset.js"></script>
+{{!-- <script src="/js/logout.js"></script> --}}
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Some text in the Modal..</p>
+  </div>
+</div>
