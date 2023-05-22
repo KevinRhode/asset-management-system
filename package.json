@@ -13,6 +13,7 @@
   },
   "author": "",
   "license": "ISC",
+
   "bugs": {
     "url": "https://github.com/KevinRhode/asset-management-system/issues"
   },
@@ -27,5 +28,8 @@
     "gridjs": "^6.0.6",
     "mysql2": "^3.3.1",
     "sequelize": "^6.31.1"
+  },
+  "engines": {
+    "node": "16.x"
   }
 }
