@@ -2,17 +2,13 @@
 
 // somethielse
 
-
-const Asset = require('./Asset');
-const Comment = require('./Comment');
-
-const Type = require('./Type');
+const Comment = require('./comment');
+const Asset = require('./asset');
+const Type = require('./type');
 const User = require('./user');
-const Location = require('./Location');
+const Location = require('./location');
 
-Asset.belongsTo(Location,{
-    foreignKey:'location_id'
-});
+Asset.belongsTo(Location);
 Asset.belongsTo(Type);
 Asset.hasMany(Comment);
 
