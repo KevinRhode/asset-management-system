@@ -3,14 +3,14 @@
 
 <div style="flex-grow: 1;">
   <ul style="list-style-type: none; padding-inline-start: 0px;">
-    <li>
+    <li class="animate__animated animate__backInLeft">
          <div class="create-btn cam" style="margin: 1rem 0rem; min-height:2rem; text-align:center;display:flex"; >
           <a href="/api/type/create" style="padding-left:1rem; background: none;border: none;padding: 0;cursor: pointer;text-decoration: none;font-size: 2rem;font-weight:bolder;display:flex;width:100%;min-height:2rem; align-items:center;margin-left:1rem;" >Create Type!</a>  
         </div>  
       
     </li>
     {{#each types as |type| }}
-      <li>
+      <li class="animate__animated animate__backInUp">
         <div class=" mac" style=" margin: 1rem 0rem; min-height:2rem;"; >
           <a href="/api/type/{{type.id}}" class="a-ref-btn">
               <strong style="font-size: 2rem; padding-left:1rem;">{{type.description}}</strong>

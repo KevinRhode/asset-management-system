@@ -3,13 +3,13 @@
 
 <div style="flex-grow: 1;">
   <ul style="list-style-type: none; padding-inline-start: 0px;">
-    <li>
+    <li class="animate__animated animate__backInLeft">
        <div class="create-btn a-ref-btn cam" style=" margin: 1rem 0rem; min-height:2rem; text-align:center;display:flex"; >
           <a class="a-ref-btn cam" href="/api/location/create" >Create Location!</a>
         </div>         
     </li>
     {{#each locations as |location| }}
-      <li>
+      <li class="animate__animated animate__backInUp">
         <div class="btn mac" style="margin: 1rem 0rem; min-height:2rem;"; >          
           <a href="/api/location/{{location.id}}" class="a-ref-btn">
               <strong style="font-size: 2rem; padding-left:1rem;">{{location.description}}</strong>

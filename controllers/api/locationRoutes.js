@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Location,User } = require('../../models');
+const { Location } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 //get create view
