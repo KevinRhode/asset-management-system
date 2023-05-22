@@ -1,8 +1,14 @@
-const locationFormHandler = async (e) => {
+const assetFormHandler = async (e) => {
     e.preventDefault();
 
-    const dV = document.querySelector('#location-description');
-    const description = dV.value.trim();
+    const eleName = document.querySelector('#asset-name');
+    const name = eleName.value.trim();
+    const eleDescription = document.querySelector('#asset-description');
+    const description = eleDescription.value.trim();
+    const eleLocaiton = document.querySelector('#location-select');
+    const location_id = eleLocaiton.value.trim();
+    const eleType = document.querySelector('#type-select');
+    const type_id = eleType.value.trim();
     // const description = document.querySelector('#location-description').value.trim();
     // Get the modal
     const modal = document.getElementById("myModal");
@@ -22,17 +28,21 @@ const locationFormHandler = async (e) => {
       }
     }
     
-    if(description){
-        const res = await fetch('/api/location/',{
+    if(name && description && location_id && type_id){
+        const res = await fetch('/api/asset/',{
             method:'POST',
-            body: JSON.stringify({description}),
+            body: JSON.stringify({name,description,location_id,type_id}),
             headers: {'Content-Type':'application/json'},
         });
         if(res.ok){
             // document.location.replace('/dashboard');
             modal.style.display = "block"; //sucess
-            modal.children[0].children[1].textContent = "Location created!"
-            dV.value = "";
+            modal.children[0].children[1].textContent = "Asset created!"
+            eleName.value = "";
+            eleDescription.value = "";
+            eleLocaiton.value = "";
+            eleType.value = "";
+
         }else{
         // When the user clicks the button, open the modal 
             modal.style.display = "block";
@@ -42,5 +52,5 @@ const locationFormHandler = async (e) => {
 }
 
 document
-  .querySelector('.location-form')
-  .addEventListener('submit', locationFormHandler);
+  .querySelector('.asset-form')
+  .addEventListener('submit', assetFormHandler);

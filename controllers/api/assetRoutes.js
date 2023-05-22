@@ -2,7 +2,26 @@ const router = require('express').Router();
 const { Asset,User,Comment,Type,Location } = require('../../models');
 // const withAuth = require('../utils/auth');
 
+router.get('/create', async (req, res) => {
+  try {
+    const locationData = await Location.findAll({});
+    const typeData = await Type.findAll({});      
 
+    const locations = locationData.map((location)=> location.get({ plain: true }));
+      
+    const types = typeData.map((type)=> type.get({ plain: true }));
+     
+    res.render('asset', {
+      // layout:'main-comment',
+      locations,
+      types,
+      // comment,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 router.get('/', async (req, res) => {
     try {
       const assetData = await Asset.findAll(

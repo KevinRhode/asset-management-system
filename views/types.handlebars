@@ -3,6 +3,21 @@
 
 <div style="flex-grow: 1;">
   <ul style="list-style-type: none; padding-inline-start: 0px;">
+    <li>
+      
+      
+         <div class="create-btn" style="background-color: aqua; margin: 1rem 0rem; min-height:2rem; text-align:center;display:flex"; >
+          <a href="/api/type/create" style="padding-left:1rem; background: none;border: none;padding: 0;cursor: pointer;color: #000;text-decoration: none;font-size: 2rem;font-weight:bolder;display:flex;width:100%;min-height:2rem; align-items:center;margin-left:1rem;" >Create Type!</a>
+          {{!-- <div 
+            class="create-btn" 
+            data-route="/api/type/create"
+            style="background: none;border: none;padding: 0;cursor: pointer;color: #f7f7f7;text-decoration: none;font-size: 100%;">
+            <strong style="font-size: 2rem; padding-left:1rem;">Create New Type!</a></strong>
+          </div> --}}
+           
+        </div>  
+      
+    </li>
     {{#each types as |type| }}
       <li>
         <div class="btn" style="background-color: aqua; margin: 1rem 0rem; min-height:2rem;"; >
@@ -22,6 +37,7 @@
 
 </div>
 
+<script src="/js/type.js"></script>
 
 {{!-- 
 

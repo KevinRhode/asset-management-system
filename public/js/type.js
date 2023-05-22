@@ -1,9 +1,8 @@
-const locationFormHandler = async (e) => {
+const typeFormHandler = async (e) => {
     e.preventDefault();
 
-    const dV = document.querySelector('#location-description');
+    const dV = document.querySelector('#type-description');
     const description = dV.value.trim();
-    // const description = document.querySelector('#location-description').value.trim();
     // Get the modal
     const modal = document.getElementById("myModal");
     // Get the <span> element that closes the modal
@@ -22,25 +21,53 @@ const locationFormHandler = async (e) => {
       }
     }
     
-    if(description){
-        const res = await fetch('/api/location/',{
+    if(dV){
+        const res = await fetch('/api/type/',{
             method:'POST',
             body: JSON.stringify({description}),
             headers: {'Content-Type':'application/json'},
         });
         if(res.ok){
-            // document.location.replace('/dashboard');
+            // document.type.replace('/dashboard');
             modal.style.display = "block"; //sucess
-            modal.children[0].children[1].textContent = "Location created!"
+            modal.children[0].children[1].textContent = "Type created!"
             dV.value = "";
         }else{
         // When the user clicks the button, open the modal 
-            modal.style.display = "block";
-            modal.children[0].children[1].textContent = res.statusText;     
+            modal.style.display = "block";   
+            modal.children[0].children[1].textContent = res.statusText;
+
         }
     }
 }
 
-document
-  .querySelector('.location-form')
-  .addEventListener('submit', locationFormHandler);
+const goToDataset = async (e) =>{
+  //e.preventDefault();
+  console.log(`${e.target.dataset.route}`);
+  // this.data-Router;
+  try {
+    const res = await fetch(`${e.target.dataset.route}`,{
+      method:'GET',
+    });
+  } catch (error) {
+    console.log(error);
+  }
+  
+  
+}
+try {
+  document
+  .querySelector('.type-form')
+  .addEventListener('submit', typeFormHandler);
+
+} catch (error) {
+  
+}
+
+try {
+  document
+  .querySelector('.create-btn')
+  .addEventListener('click', goToDataset);
+} catch (error) {
+  
+}
