@@ -1,8 +1,9 @@
 
-const User = require('./User');
+
 const Comment = require('./Comment');
 const Asset = require('./Asset');
 const Type = require('./Type');
+const User = require('./user');
 const Location = require('./Location');
 
 Asset.belongsTo(Location);
