@@ -1,8 +1,17 @@
 <div style="display:flex; flex-direction:column; align-items:stretch; justify-content: space-between;">
-<h1>
+  <div style="display:flex;flex-direction: row;">
+    {{#if logged_in}} 
+       <img src="/images/logo.svg" alt="logo image, colored triangle containing the text AMS">
+     {{else}} 
+       
+     {{/if}} 
+    
+<h1 class="mac-t" style="align-items: end;display: flex;">
     Asset Management
 </h1>
-<div class="header-nav-handle" style="display:flex;flex-direction:column;">
+  </div>
+
+<div class="header-nav-handle" style="display:flex;">{{!-- flex-direction:column; --}}
     <a class="css-button" href="/">Home</a>
      {{#if logged_in}} 
        <a class="css-button" href="/dashboard">Dashboard</a>

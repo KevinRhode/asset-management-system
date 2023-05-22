@@ -45,10 +45,10 @@ router.get('/:id',async (req,res)=>{
         //find obj in db
         const typeData = await Type.findByPk(req.params.id);
         //strip data
-        const types = typeData.get({ plain: true });
+        const type = typeData.get({ plain: true });
         //render to screen
-        res.render('types',{
-            types,
+        res.render('type',{
+            type,
             logged_in: req.session.logged_in
         });
         // return res.status(200).json(types);

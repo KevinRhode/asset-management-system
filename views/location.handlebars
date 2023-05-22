@@ -1,18 +1,26 @@
-<div class="row" style="background-color: aqua;display:flex;flex-grow: 1;justify-content: center;align-items: stretch;">
+<div class="row mac" style="display:flex;flex-grow: 1;justify-content: center;align-items: stretch;">
 <div class="border">
   <h2>Location</h2>
 <div class="location">
-    
-
     <form class="form location-form">
       <div class="form-group">
         <label for="location-description">Location Name</label>
-        <input class="form-input" type="text" id="location-description" />
+        <input class="form-input" type="text" id="location-description"
+        {{#if location}}
+          value="{{location.description}}"
+        {{else}}
+          
+        {{/if}}
+         />
       </div>
       <div class="form-group">
-        <button class="btn btn-primary" type="submit">Create!</button>
+        {{#if location}}
+          <button class="btn btn-primary" type="submit">Update</button>
+          <button class="btn btn-primary" type="submit">Delete</button>
+        {{else}}
+          <button class="btn btn-primary" type="submit">Create!</button>
+        {{/if}}
       </div>
-      <a href="/">Go Back!</a>
     </form>
   </div>
   </div>  

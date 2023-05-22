@@ -4,16 +4,16 @@
 <div style="flex-grow: 1;">
   <ul style="list-style-type: none; padding-inline-start: 0px;">
     {{#each assets as |asset| }}
-      <li>
-        <div class="btn" style="background-color: aqua; margin: 1rem 0rem; min-height:2rem;"; >
-          <div>
-              <strong style="font-size: 2rem;">{{asset.name}}</strong>
-              <label style="">{{asset.description}}</label>
+      <li data-id="{{asset.id}}">
+        <div class="btn mac sh" style="border-radius:1rem; padding:0.75rem; margin: 1rem 0rem; min-height:2rem;"; >
+          <div style="    display: flex;
+    flex-direction: column;">
+              <strong style="font-size: 2rem; border-bottom:0.25rem solid var(--main-mid-l);">{{asset.name}}</strong><br/>
+              <label style="margin:1rem 0rem;">{{asset.description}}</label>
           </div>
           <div>
-              {{asset.location.description}} 
-              {{asset.type.description}}
-              {{#if asset.manual}} <a href="{{asset.manual}}">Manual Link</a> {{else}} {{/if}}
+              {{asset.location.description}}, 
+              {{asset.type.description}}{{#if asset.manual}}, <a href="{{asset.manual}}">Manual Link</a> {{else}} {{/if}}
           </div>
            
         </div>          
@@ -28,4 +28,4 @@
 
 </div>
 
-
+<script src="/js/dashboard.js"></script>

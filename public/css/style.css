@@ -1,3 +1,11 @@
+:root{
+--main-mid-l:#CBF3D2;
+--main-bg-color:#B7C0EE;
+--main-mid:#7067CF;
+--main-acset-color:#7B287D;
+--main-color:#330C2F;
+}
+
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
@@ -38,32 +46,113 @@
   }
 
 
-  .header-nav-handle a{
-    margin: 1rem 0rem;
+  html{
+    background-color: var(--main-bg-color);
+    /* font-family: ''; */
+    /* font-family: 'Tilt Neon', cursive; */
   }
-
-  .css-button {
+  .a-ref-btn{
+    padding-left:1rem;
     background: none;
     border: none;
     padding: 0;
     cursor: pointer;
-    color: #000;
+    color: var(--main-mid-l);
+    text-shadow: var(--main-mid);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight:bolder;
+    display:flex;
+    width:100%;
+    min-height:2rem;
+    align-items:center;
+    margin-left:1rem;
+    border-radius: 1rem;
+  }
+
+
+  .header-nav-handle{
+    flex-direction: column;
+  }
+  .header-nav-handle a{
+    margin: 0.25rem 0rem;
+    background-color: var(--main-mid);
+    border-radius: 0.5rem;
+    box-shadow: var(--main-acset-color);
+  }
+
+  .css-button {
+    background-color: var(--main-mid);
+    border: none;
+    padding: 0.5rem 0 0.5rem 0;
+    cursor: pointer;
+    /* color:  */
     text-decoration: none;
     text-align: center;
-    font-size: 100%;
+    font-size: 1.25rem;
+    font-weight: bolder;
     width: 100%;
-    border:0.25rem solid #000;
+    margin: auto;
+    border:0.25rem solid var(--main-mid);
+
   }
   
   .css-button:hover {
-    color: #f0f0f0;
+    color: var(--main-mid-l);
     text-decoration: none;
   }
-
+  .header-nav-handle .css-button{
+    width: unset;
+  }
   .form-group{
     margin: 1rem 0rem;
   }
-
-  .btn{
+  .mac{
+    color:var(--main-bg-color); 
+    background-color: var(--main-color);
+    border-radius: 2rem;
+  }
+  .cam{
+    color:var(--main-color); 
+    background-color: var(--main-mid-l);
+    border-radius: 2rem;
+  }
+  .btn-primary{
+    background-color: var(--main-bg-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 1rem;
+    min-height: 4rem;
     width: 100%;
+  }
+  
+
+  .mac-t{
+    color:var(--main-color); 
+    
+  }
+  .bright{
+    background-color: var(--main-mid-l);
+    border-radius: 2rem;
+  }
+  .match-main{
+    background-color: var(--main-bg-color);
+  }
+  .sh{
+    box-shadow: var(--main-mid-l) 0.25rem 0.25rem;
+  }
+  /* .btn{
+    width: 100%;
+  } */
+
+  @media screen and (min-width:667px){
+    .header-nav-handle{
+      flex-direction: row;
+    }
+    .header-nav-handle a {
+      margin: 0.25rem 0.25rem;
+  }
+  .header-nav-handle .css-button{
+    width: 100%;
+  }
   }

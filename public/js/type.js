@@ -41,20 +41,7 @@ const typeFormHandler = async (e) => {
     }
 }
 
-const goToDataset = async (e) =>{
-  //e.preventDefault();
-  console.log(`${e.target.dataset.route}`);
-  // this.data-Router;
-  try {
-    const res = await fetch(`${e.target.dataset.route}`,{
-      method:'GET',
-    });
-  } catch (error) {
-    console.log(error);
-  }
-  
-  
-}
+
 try {
   document
   .querySelector('.type-form')
@@ -64,10 +51,3 @@ try {
   
 }
 
-try {
-  document
-  .querySelector('.create-btn')
-  .addEventListener('click', goToDataset);
-} catch (error) {
-  
-}

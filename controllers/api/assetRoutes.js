@@ -49,7 +49,9 @@ router.get('/', async (req, res) => {
     );      
   
       const assets = assetData.map((asset)=> asset.get({ plain: true }));
-        return res.status(200).json(assets);
+        
+      
+      return res.status(200).json(assets);
       // res.render('Assets', {
       //   // layout:'main-comment',
       //   assets,
