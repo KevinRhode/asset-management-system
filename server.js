@@ -18,7 +18,7 @@ const sess = {
   secret: 'Super secret secret',
   cookie: {
     maxAge: 300000,
-    httpOnly: false,
+    httpOnly: true,
     secure: false,
     sameSite: 'strict',
   },
@@ -41,5 +41,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
+  app.listen(process.env.PORT || 3000, () => console.log('Now listening'));
 });
