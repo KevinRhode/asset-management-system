@@ -13,12 +13,12 @@
   },
   "author": "",
   "license": "ISC",
-
   "bugs": {
     "url": "https://github.com/KevinRhode/asset-management-system/issues"
   },
   "homepage": "https://github.com/KevinRhode/asset-management-system#readme",
   "dependencies": {
+    "animate.css": "^4.1.1",
     "bcrypt": "^5.1.0",
     "connect-session-sequelize": "^7.1.6",
     "dotenv": "^16.0.3",

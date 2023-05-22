@@ -67,14 +67,14 @@ router.get('/', async (req, res) => {
             attributes:['description']
           },
           
-          {
-            model:Comment,
-            // attributes:['user_id','description'],
-            include:[{
-              model:User,
-              attributes:['username']
-          }]            
-          },          
+          // {
+          //   model:Comment,
+          //   // attributes:['user_id','description'],
+          //   include:[{
+          //     model:User,
+          //     attributes:['username']
+          // }]            
+          // },          
         ],        
         },
     );      
