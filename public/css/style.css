@@ -98,7 +98,7 @@
     border: none;
     padding: 0.5rem 0 0.5rem 0;
     cursor: pointer;
-    /* color:  */
+    color: var(--main-bg-color);
     text-decoration: none;
     text-align: center;
     font-size: 1.25rem;
