@@ -1,7 +1,3 @@
-
-
-// somethielse
-
 const Comment = require('./comment');
 const Asset = require('./asset');
 const Type = require('./type');
