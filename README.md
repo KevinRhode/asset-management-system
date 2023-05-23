@@ -6,12 +6,12 @@ Asset Management System is a CMS prof of concept, you can create an account, vie
 
 ## Stack
 
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)  
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)  
 
-![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
-![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
-![mysql2](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)  
+![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)  
+![mysql2](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)  
 
 
 ## Table of Contents 
@@ -44,6 +44,10 @@ npm start
 ## Credits
 
 [Kevin Rhode](https://github.com/KevinRhode)
+
+[heroku](https://coding-boot-camp.github.io/full-stack/heroku/deploy-with-heroku-and-mysql)
+[AC](https://animate.style/)
+[Badges](https://ileriayo.github.io/markdown-badges/)
 
 ## Screenshot
 ![landing](./public/images/asset-mgt-sys-kevinrhode.herokuapp.com_.png)
