@@ -19,7 +19,7 @@ Asset Management System is a CMS prof of concept, you can create an account, vie
 - [User Story](#user-story)
 - [Installation](#installation)
 - [Screenshot](#screenshot)
-- [Deployed](#credits)
+- [Credits](#credits)
 - [License](#license)
 
 ## User Story
@@ -39,21 +39,21 @@ SOURCE db/schema.sql
 type quit
 node seeds/index.js
 npm start
-
-
-## Credits
-
-[Kevin Rhode](https://github.com/KevinRhode)  
-
-[heroku](https://coding-boot-camp.github.io/full-stack/heroku/deploy-with-heroku-and-mysql)  
-[AC](https://animate.style/)  
-[Badges](https://ileriayo.github.io/markdown-badges/)  
+  
+[Deployed Page](https://asset-mgt-sys-kevinrhode.herokuapp.com/)  
+[Repo](https://github.com/KevinRhode/asset-management-system)
 
 ## Screenshot
 ![landing](./public/images/asset-mgt-sys-kevinrhode.herokuapp.com_.png)
 ![login](./public/images/asset-mgt-sys-kevinrhode.herokuapp.com_login.png)
 ![dashboard](./public/images/asset-mgt-sys-kevinrhode.herokuapp.com_dashboard.png)
 ![location](./public/images/asset-mgt-sys-kevinrhode.herokuapp.com_api_location_.png)
+
+## Credits
+[Kevin Rhode](https://github.com/KevinRhode)  
+[heroku](https://coding-boot-camp.github.io/full-stack/heroku/deploy-with-heroku-and-mysql)  
+[AC](https://animate.style/)  
+[Badges](https://ileriayo.github.io/markdown-badges/)  
 
 ## License
 
