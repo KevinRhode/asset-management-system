@@ -43,11 +43,11 @@ npm start
 
 ## Credits
 
-[Kevin Rhode](https://github.com/KevinRhode)
+[Kevin Rhode](https://github.com/KevinRhode)  
 
-[heroku](https://coding-boot-camp.github.io/full-stack/heroku/deploy-with-heroku-and-mysql)
-[AC](https://animate.style/)
-[Badges](https://ileriayo.github.io/markdown-badges/)
+[heroku](https://coding-boot-camp.github.io/full-stack/heroku/deploy-with-heroku-and-mysql)  
+[AC](https://animate.style/)  
+[Badges](https://ileriayo.github.io/markdown-badges/)  
 
 ## Screenshot
 ![landing](./public/images/asset-mgt-sys-kevinrhode.herokuapp.com_.png)
