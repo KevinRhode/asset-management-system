@@ -30,15 +30,15 @@ SO THAT I can record asset information, location, type, and user information to 
 ```
 
 ## Installation
-Clone the Repo,
+Clone the Repo,  
 Naviagte to the root Dir.  
-npm i  
-mysql -u <username> -p 
-proceed to enter password
-SOURCE db/schema.sql
-type quit
-node seeds/index.js
-npm start
+npm i    
+mysql -u <username> -p   
+proceed to enter password  
+SOURCE db/schema.sql  
+type quit  
+node seeds/index.js  
+npm start  
   
 [Deployed Page](https://asset-mgt-sys-kevinrhode.herokuapp.com/)  
 [Repo](https://github.com/KevinRhode/asset-management-system)
