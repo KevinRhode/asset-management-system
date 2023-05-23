@@ -29,6 +29,7 @@ const signupFormHandler = async (e) => {
             headers: {'Content-Type':'application/json'},
         });
         if(res.ok){
+          //take user to dash
             document.location.replace('/dashboard');
         }else{
         // When the user clicks the button, open the modal 

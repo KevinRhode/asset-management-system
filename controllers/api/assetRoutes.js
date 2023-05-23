@@ -2,26 +2,25 @@ const router = require('express').Router();
 const { Asset,User,Comment,Type,Location } = require('../../models');
 // const withAuth = require('../utils/auth');
 
+
+//load asset create page
 router.get('/create', async (req, res) => {
   try {
-    const locationData = await Location.findAll({});
-    const typeData = await Type.findAll({});      
-
-    const locations = locationData.map((location)=> location.get({ plain: true }));
-      
-    const types = typeData.map((type)=> type.get({ plain: true }));
+    const locationData = await Location.findAll({});//get data
+    const typeData = await Type.findAll({});//get data
+    const locations = locationData.map((location)=> location.get({ plain: true }));//get plain data      
+    const types = typeData.map((type)=> type.get({ plain: true }));//get plain data
      
     res.render('asset', {
-      // layout:'main-comment',
-      locations,
-      types,
-      // comment,
+      locations,//send to template
+      types,//send to template
       logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
 router.get('/edit/:id', async (req, res) => {
   try {
     const assetData = await Asset.findByPk(req.params.id,{
@@ -120,7 +119,6 @@ router.put('/:id', async (req,res)=>{
     res.status(400).json(err);
   }
 });
-
 
 router.delete('/:id', async (req,res)=>{
   try {
