@@ -8,6 +8,7 @@
       <div class="form-group">
         <label for="type-description">Type Name</label>
         <input class="form-input" type="text" id="type-description"
+        {{!-- handlebars if call --}}
          {{#if type}}
           value="{{type.description}}"
         {{else}}
@@ -16,10 +17,13 @@
          />
       </div>
       <div class="form-group">
+        {{!-- handlebars if call --}}
         {{#if type}}
+          {{!-- type was sent, so because it is not empty we are going to edit --}}
           <button class="btn btn-primary edit-handle" data-id="{{type.id}}" type="submit">Update</button>
           <button class="btn btn-primary delete-handle" data-id="{{type.id}}" type="submit">Delete</button>
         {{else}}
+        {{!-- to create --}}
           <button class="btn btn-primary" type="submit">Create!</button>
         {{/if}}
       </div>
@@ -29,9 +33,11 @@
 </div>
 
 <div style="flex-grow: 0.35;">
+  
+  {{!-- use partial view to see right vertical nav --}}
   {{> vert-nav}}
 </div>
-
+{{!-- load need handlers for interactive pages --}}
 <script src="/js/type.js"></script>
 <!-- The Modal -->
 <div id="myModal" class="modal">

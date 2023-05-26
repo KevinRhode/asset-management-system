@@ -1,6 +1,7 @@
 <div class="row mac" style="display:flex;flex-grow: 1;justify-content: center;align-items: stretch;">
 <div class="border">
   <h2 style="padding-left: 1rem;">Asset</h2>
+  
 <div class="asset" id="asset" data-id="{{asset.id}}" style="padding: 0.25rem;">
     
 
@@ -14,7 +15,9 @@
       <div class="form-group" style="display: flex; flex-direction:column;">
         <label for="location-select">Asset Location: </label>
         <select name="Location" id="location-select">
+
             <option value="{{asset.location.id}}" selected> {{asset.location.description}} </option>
+            {{!-- loading the locations of the current db, im bad --}}
             {{#if locations}}
                  {{#each locations as |location| }}
                   
@@ -32,6 +35,7 @@
         <label for="type-select">Asset Type: </label>
         <select name="Type" id="type-select">
             <option value="{{asset.type.id}}" selected> {{asset.type.description}}</option>
+            {{!-- loading the type of the current db, im bad --}}
             {{#if types}}
                  {{#each types as |type| }}
                  <option value="{{type.id}}">{{type.description}}</option>
@@ -46,12 +50,13 @@
       <div class="form-group" style="display: flex; flex-direction:column;">
         <label for="asset-description">Asset Description: </label>
         <textarea name="asset-description" id="asset-description" cols="22" rows="10">{{asset.description}}</textarea>
-        {{!-- <input class="form-input" type="text" id="asset-description"
-        value="{{asset.description}}" /> --}}
+      
       </div>
       
       <div class="form-group" style="text-align: center; ">
+        {{!-- btn to provide user interact and edit --}}
         <button class="btn btn-primary edit-handler" type="submit">Update!</button>
+        {{!-- btn to provide user interact and id --}}
         <button class="btn btn-primary delete-handler" data-id="{{asset.id}}" type="submit">Delete!</button>
       </div>
     </form>
@@ -60,6 +65,7 @@
 </div>
 
 <div style="flex-grow: 0.35;">
+  {{!-- right side vertical nav --}}
   {{> vert-nav}}
 </div>
 

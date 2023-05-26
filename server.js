@@ -3,13 +3,15 @@ const express = require('express');
 // Import express-session
 const session = require('express-session');
 const exphbs = require('express-handlebars');
-const routes = require('./controllers');
-const sequelize = require('./config/connection');
+const routes = require('./controllers');//MVC
+const sequelize = require('./config/connection');//connect to hosted jawsDB connect else local
 const helpers = require('./utils/helpers');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
+
 const app = express();
 const PORT = process.env.PORT || 3001;
+//set helpers for handlebars
 const hbs = exphbs.create({ helpers });
 
 const sess = {
@@ -27,6 +29,7 @@ const sess = {
   })
 };
 
+//use the session and cookie 
 app.use(session(sess));
 
 app.engine('handlebars', hbs.engine);

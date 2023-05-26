@@ -3,15 +3,22 @@
 
 <div style="flex-grow: 1;">
   <ul style="list-style-type: none; padding-inline-start: 0px;">
+    {{!-- implemented AC package classes --}}
     <li class="animate__animated animate__backInLeft">
        <div class="create-btn a-ref-btn cam" style=" margin: 1rem 0rem; min-height:2rem; text-align:center;display:flex"; >
           <a class="a-ref-btn cam" href="/api/location/create" >Create Location!</a>
         </div>         
     </li>
+    
+    {{!-- for each location loaded --}}
     {{#each locations as |location| }}
+    {{!-- implemented AC package classes --}}
       <li class="animate__animated animate__backInUp">
-        <div class="btn mac" style="margin: 1rem 0rem; min-height:2rem;"; >          
+        {{!-- styling --}}
+        <div class="btn mac" style="margin: 1rem 0rem; min-height:2rem;"; >  
+          {{!-- route --}}
           <a href="/api/location/{{location.id}}" class="a-ref-btn">
+              {{!-- content --}}
               <strong style="font-size: 2rem; padding-left:1rem;">{{location.description}}</strong>
           </a>           
         </div>          
@@ -21,9 +28,10 @@
 </div>
 
 <div style="flex-grow: 0.35;">
+    {{!-- use partial view to see right vertical nav --}}
   {{> vert-nav}}
 </div>
 
 </div>
-
+{{!-- load need handlers for interactive pages --}}
 <script src="/js/location.js"></script>

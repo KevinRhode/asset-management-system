@@ -1,18 +1,27 @@
-<!-- Loop over each object in the asset array -->
+
 <div style="display: flex; flex-grow:1;">
 
 <div style="flex-grow: 1;">
+  {{!-- styling --}}
   <ul style="list-style-type: none; padding-inline-start: 0px;">
+    {{!-- implemented AC package classes --}}
     <li class="animate__animated animate__backInLeft">
+      {{!-- styling and create --}}
          <div class="create-btn cam" style="margin: 1rem 0rem; min-height:2rem; text-align:center;display:flex"; >
+          {{!-- route --}}
           <a href="/api/type/create" style="padding-left:1rem; background: none;border: none;padding: 0;cursor: pointer;text-decoration: none;font-size: 2rem;font-weight:bolder;display:flex;width:100%;min-height:2rem; align-items:center;margin-left:1rem;" >Create Type!</a>  
         </div>  
       
     </li>
+    {{!-- for each type loaded --}}
     {{#each types as |type| }}
+    {{!-- implemented AC package classes --}}
       <li class="animate__animated animate__backInUp">
+        {{!-- styling --}}
         <div class=" mac" style=" margin: 1rem 0rem; min-height:2rem;"; >
+          {{!-- route --}}
           <a href="/api/type/{{type.id}}" class="a-ref-btn">
+              {{!-- content --}}
               <strong style="font-size: 2rem; padding-left:1rem;">{{type.description}}</strong>
           </a>
            
@@ -23,35 +32,12 @@
 </div>
 
 <div style="flex-grow: 0.35;">
+  {{!-- use partial view to see right vertical nav --}}
   {{> vert-nav}}
 </div>
 
 </div>
-
+{{!-- load need handlers for interactive pages --}}
 <script src="/js/type.js"></script>
-
-{{!-- 
-
-
-<!-- Loop over each object in the asset array -->
-<div style="display: flex;">
-
-<div style="flex-grow: 1;">
-  <ul style="list-style-type: none; padding-inline-start: 0px;">
-    {{#each types as |type| }}
-      <li>
-        <div style="background-color: aqua; margin: 1rem 0rem";>
-          {{type.description}}
-        </div>          
-      </li>
-    {{/each}}
-  </ul>
-</div>
-
-<div style="flex-grow: 0.35;">
-  {{> vert-nav}}
-</div>
-
-</div> --}}
 
 

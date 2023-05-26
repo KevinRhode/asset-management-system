@@ -100,6 +100,7 @@ const delButtonHandler = async (event) => {
     } else {
       // When the user clicks the button, open the modal 
       modal.style.display = "block";   
+      // to change modal text
       modal.children[0].children[1].textContent = res.statusText;
       
     }
